@@ -60,6 +60,7 @@ class TimeEntry extends Component{
     method: 'post',
     headers: {"Content-Type": "application/json"}
   }).then(function(response) {
+    console.log("response")
     console.log(response)
       return response.json()
     }).then((data) => {

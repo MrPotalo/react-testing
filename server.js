@@ -6,11 +6,21 @@ const fs = require("fs")
 const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5000;
-var num = 0;
+var clientKey, userKey;
 var todoData = {data: []}
+fs.readFile("keys.json", function (err, data){
+  console.log("keys.json data: " + data)
+  if (err){
+    return;
+  }else{
+    var jsonData = JSON.parse(data);
+    clientKey = jsonData.clientKey;
+    userKey = jsonData.userKey;
+  }
+})
 function callAPI(url, content, fnc){
   var requestOptions = {json: true,
-    headers: {Authorization: 'WRAP access_token="client=[clientKey]user_token=[userKey]"'}
+    headers: {Authorization: 'WRAP access_token="client=' + clientKey + 'user_token=' + userKey + '"'}
 }
   if (content != null){
     requestOptions.body = content;
@@ -31,6 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.get('/api/employeedata', (req, res) => {
   callAPI("https://api.dovico.com/Employees/Me/?version=6", null, (body) => {
+    console.log(body)
     res.send(body.Employees[0])
   })
 });
