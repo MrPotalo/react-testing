@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+#mainContainer > .Section{
+}
+#mainContainer > .Section:first-of-type{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#mainContainer > .Section:last-of-type{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

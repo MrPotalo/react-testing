@@ -1,0 +1,45 @@
+div > .outerTodo{
+    margin: 5px 0px;
+}
+.outerTodo{
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+}
+.outerTodo > div:first-child{
+    display: inline-block;
+    width: calc(100% - 80px);
+    word-wrap: break-word;
+}
+.outerTodo > div.buttonBox{
+    display:inline-block;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+.outerTodo > div > button{
+    border: 1px solid #000;
+    border-radius: 5px;
+    vertical-align: top;
+}
+.outerTodo > div > button:first-of-type{
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+}
+.outerTodo > div > button.deleteButton{
+    background-color: #ff0000;
+    color: #ffffff;
+    height: 24px;
+    margin-left: 5px;
+}
+.outerTodo > div > button.check::after{
+    content: '\2714'
+}
+.outerTodo > div > button.nocheck::after{
+    content: ' ';
+}
+.outerTodo > div.strike{
+    text-decoration: line-through;
+}

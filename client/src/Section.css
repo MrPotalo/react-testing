@@ -1,0 +1,21 @@
+html *{
+    box-sizing: border-box;
+}
+.Section{
+    margin: 10px auto;
+    width: 80%;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #e2e3e6;
+}
+.Section > hr{
+    border: none;
+    border-top: 1px solid #e2e3e6;
+    margin-bottom: 15px;
+}
+.Section > h1{
+    color: #4169e1;
+    margin: 0px;
+    font-weight: 600;
+    font-size: 20px;
+}
