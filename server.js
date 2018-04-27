@@ -10,7 +10,7 @@ var num = 0;
 var todoData = {data: []}
 function callAPI(url, content, fnc){
   var requestOptions = {json: true,
-    headers: {Authorization: 'WRAP access_token="client=7f159a3da13040a3afa87f9efea4c9c8.37797&user_token=9f56c4cf107d405dae05774d4012e78b.37797"'}
+    headers: {Authorization: 'WRAP access_token="client=[clientKey]user_token=[userKey]"'}
 }
   if (content != null){
     requestOptions.body = content;
